@@ -43,7 +43,20 @@ en la terminal se emplea:
 
 Crear una DB y usuario
 
-mysql -u root -p
+    mysql -u root -p
+    CREATE DATABASE dblaravel; 
+
+Se crea usuario y passw
+
+    create user 'ouser'@'%' identified by 'QqX05.SA%>UNdd';
+
+se otorgan todos los privilegios a usuario ramiro
+
+    GRANT ALL PRIVILEGES ON *.* TO 'ouser'@'%';
+
+Salimos de  la MySQL
+
+    exit
 
 
 Añandir información de la BD a .env
@@ -56,6 +69,10 @@ Se instalan dependencias de javascript mediante:
 
     npm install
     npm run dev
+    
+Generar  modelos
+
+    php artisan migrate
 
 ## Ejecutar app
 
