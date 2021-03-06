@@ -16,7 +16,7 @@ José Ramiro Álvarez
 * Instalación de PHP 7x.
 * Instalación de manejador de paquetes para PHP (Composer).
 * Instalación de nodejs.
-* Instalación de la Base de Datos MySQL 8x.
+* Instalación de la Base de Datos MySQL 8x.  (REFERENCE MySQlInstallation.md)
 * Instalación de versionador de código GIT.
 
 Se clona el proyecto (se copia link desde la cuenta de Github)
@@ -46,8 +46,6 @@ Crear una DB y usuario
 mysql -u root -p
 
 
-    
-
 Añandir información de la BD a .env
 
     DB_DATABASE=<replacename>
@@ -69,6 +67,7 @@ Ejecutar comandos de git  para la cuenta en uso
     git config --global user.name "Tu Nombre"
 
 guardar cambios (modificaciones)
+
     git add .
     git commit -m "comentario"
     git push origin main
