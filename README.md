@@ -19,10 +19,34 @@ José Ramiro Álvarez
 * Instalación de la Base de Datos MySQL 8x.
 * Instalación de versionador de código GIT.
 
-Una vez que se copia el proyecto
+Se clona el proyecto (se copia link desde la cuenta de Github)
+
+    git clone https://github.com/JRamyro/cecytem.git
+   
+Se crea carpeta <nombre del Proyecto>
+cambiar a carpeta <nombre del proyecto>
+
+    cd <nombre del proyecto>
+
+Ejecutar
+
+    composer install
+
+Se copia el proyecto <nombre>
+
+en la terminal se emplea:
 
     cp .env.example .env
     php artisan key:generate
+    
+## Configuracion base de datos
+
+Crear una DB y usuario
+
+mysql -u root -p
+
+
+    
 
 Añandir información de la BD a .env
 
@@ -30,12 +54,17 @@ Añandir información de la BD a .env
     DB_USERNAME=<replacename>
     DB_PASSWORD=<replacename>
 
-Para ejecutar
+Se instalan dependencias de javascript mediante:
 
-    composer install
     npm install
     npm run dev
 
 ## Ejecutar app
 
     php artisan serve --host=0.0.0.0
+
+    git add .
+    git commit -m "comentario"
+    git push origin main
+    
+    git status
