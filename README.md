@@ -62,9 +62,17 @@ Se instalan dependencias de javascript mediante:
 ## Ejecutar app
 
     php artisan serve --host=0.0.0.0
+    
+Ejecutar comandos de git  para la cuenta en uso
+    
+    git config --global user.email "you@example.com"
+    git config --global user.name "Tu Nombre"
 
+guardar cambios (modificaciones)
     git add .
     git commit -m "comentario"
     git push origin main
+    
+Se solicita usuario de Github y pass
     
     git status
