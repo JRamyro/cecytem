@@ -22,3 +22,4 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/todos', 'HomeController@todos')->name('todos');
 Route::get('/updateavatar', 'HomeController@avatar')->name('avatar');
+Route::post('/update', 'HomeController@update')->name('update');

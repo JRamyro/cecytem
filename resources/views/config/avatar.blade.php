@@ -4,9 +4,9 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <form action="#" method="post" enctype="multipart/form-data">
+                <form action="{{route('update')}}" method="post" enctype="multipart/form-data">
                     @csrf
-                    <input type="file" name="avatar">
+                    <input type="file" name="avatarImage">
                     <input type="submit" name="submit">
                 </form>
             </div>
