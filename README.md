@@ -16,7 +16,7 @@ José Ramiro Álvarez
 * Instalación de PHP 7x.
 * Instalación de manejador de paquetes para PHP (Composer).
 * Instalación de nodejs.
-* Instalación de la Base de Datos MySQL 8x.  (REFERENCE MySQlInstallation.md)
+* Instalación de la Base de Datos MySQL 8x.  [detalles] ( https://github.com/JRamyro/cecytem/blob/main/MySQLInstallation.md )
 * Instalación de versionador de código GIT.
 
 Se clona el proyecto (se copia link desde la cuenta de Github)
