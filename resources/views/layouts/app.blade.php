@@ -38,7 +38,11 @@
                     <ul class="navbar-nav mr-auto">
 
                     </ul>
-
+                    @guest
+                        :c
+                    @else
+                        <img src="{{asset('/storage/'.Auth::user()->avatar)}}" width="60px" height="60px">
+                    @endguest
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
