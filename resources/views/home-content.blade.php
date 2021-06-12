@@ -9,11 +9,16 @@
                         <div class="card px-3">
                             <div class="card-body">
                                 <h4 class="card-title">Tareas</h4>
-                                <div class="add-items d-flex"><input type="text" class="form-control todo-list-input"
-                                                                     placeholder="What do you need to do today?">
-                                    <button class="add btn btn-primary font-weight-bold todo-list-add-btn">Anadir
-                                    </button>
-                                </div>
+                                <form action="{{route('guardarTarea')}}" method="post">
+                                    @csrf
+                                    <div class="add-items d-flex">
+                                        <input type="text" class="form-control todo-list-input"
+                                               placeholder="Que necesitas hacer hoy? 🧐"
+                                               name="nuevoTodo"/>
+                                        <input type="submit" name="submit"
+                                               class="add btn btn-primary font-weight-bold todo-list-add-btn" value="Guardar"/>
+                                    </div>
+                                </form>
                                 <div class="list-wrapper">
                                     <ul class="d-flex flex-column-reverse todo-list">
                                         <li>
@@ -32,18 +37,6 @@
                                             <label class="form-check-label">
                                                 <button type="submit" class="btn btn-info btn-sm"></button>
                                                 it amet, consectetur adipiscing elit. Vestibulum at
-                                            </label>
-                                        </li>
-                                        <li>
-                                            <label class="form-check-label">
-                                                <button type="submit" class="btn btn-info btn-sm"></button>
-                                                Aenean eros massa, pharetra vel vehicula vel,
-                                            </label>
-                                        </li>
-                                        <li>
-                                            <label class="form-check-label">
-                                                <button type="submit" class="btn btn-info btn-sm"></button>
-                                                Mauris nec ante arcu. Donec sem risus, bibendum
                                             </label>
                                         </li>
                                     </ul>

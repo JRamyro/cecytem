@@ -21,3 +21,4 @@ Route::get('/home', 'HomeController@index');
 Route::get('/todos', 'HomeController@todos')->name('todos');
 Route::get('/updateavatar', 'HomeController@avatar')->name('avatar');
 Route::post('/update', 'HomeController@update')->name('update');
+Route::post('/guardar', 'HomeController@guardarTarea')->name('guardarTarea');

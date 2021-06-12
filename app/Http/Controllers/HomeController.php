@@ -26,19 +26,30 @@ class HomeController extends Controller
     {
         return view('home-content');
     }
+
     public function todos()
     {
         return view('todos.todohome');
     }
+
     public function avatar()
     {
         return view('config.avatar');
     }
+
     public function update(Request $request)
     {
         Log::info('Image received');
         $image = $request->avatarImage->store('avatars', 'public');
         auth()->user()->update(['avatar' => $image]);
+        return redirect()->back();
+    }
+
+    public function guardarTarea(Request $request)
+    {
+        $todo = $request->input('nuevoTodo');
+        Log::info('Guardando nuevo todo [' . $todo . ']');
+
         return redirect()->back();
     }
 
