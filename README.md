@@ -32,6 +32,10 @@ Ejecutar
 
     composer install
 
+Para referenciar los archivos situados en Storage hacia public se emplea
+
+    php artisan storage:link
+
 Se copia el proyecto <nombre>
 
 en la terminal se emplea:

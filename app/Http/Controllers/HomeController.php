@@ -37,8 +37,10 @@ class HomeController extends Controller
     public function update(Request $request)
     {
         Log::info('Image received');
-        $path = $request->file('avatarImage')->store('avatars');
-        return $path;
+        $image = $request->avatarImage->store('avatars', 'public');
+        auth()->user()->update(['avatar' => $image]);
+        return redirect()->back();
     }
+
 
 }

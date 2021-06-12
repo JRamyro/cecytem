@@ -26,6 +26,9 @@
                 <a class="navbar-brand" href="{{ url('/') }}">
                     Proyecto Cecytem
                 </a>
+                <a class="navbar-brand" href="{{ url('/updateavatar') }}">
+                  Avatar
+                </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -35,7 +38,11 @@
                     <ul class="navbar-nav mr-auto">
 
                     </ul>
-
+                    @guest
+                        :c
+                    @else
+                        <img src="{{asset('/storage/'.Auth::user()->avatar)}}" width="60px" height="60px">
+                    @endguest
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
