@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Todos;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 
@@ -49,7 +50,9 @@ class HomeController extends Controller
     {
         $todo = $request->input('nuevoTodo');
         Log::info('Guardando nuevo todo [' . $todo . ']');
-
+        $todoObject = new Todos();
+        $todoObject->todo = $todo;
+        $todoObject->save();
         return redirect()->back();
     }
 
