@@ -8,6 +8,9 @@ use Illuminate\Support\Facades\Log;
 
 class HomeController extends Controller
 {
+
+    private $pendienteState = 'pendiente';
+
     /**
      * Create a new controller instance.
      *
@@ -25,7 +28,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home-content');
+        $todos = Todos::all();
+        Log::info('total de todos para mostrar [' . count($todos) . ']');
+        return view('home-content')->with('todos', $todos);
     }
 
     public function todos()
@@ -52,6 +57,7 @@ class HomeController extends Controller
         Log::info('Guardando nuevo todo [' . $todo . ']');
         $todoObject = new Todos();
         $todoObject->todo = $todo;
+        $todoObject->estatus = $this->pendienteState;
         $todoObject->save();
         return redirect()->back();
     }

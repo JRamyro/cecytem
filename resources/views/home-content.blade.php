@@ -16,29 +16,24 @@
                                                placeholder="Que necesitas hacer hoy? 🧐"
                                                name="nuevoTodo"/>
                                         <input type="submit" name="submit"
-                                               class="add btn btn-primary font-weight-bold todo-list-add-btn" value="Guardar"/>
+                                               class="add btn btn-primary font-weight-bold todo-list-add-btn"
+                                               value="Guardar"/>
                                     </div>
                                 </form>
                                 <div class="list-wrapper">
                                     <ul class="d-flex flex-column-reverse todo-list">
-                                        <li>
-                                            <label class="form-check-label">
-                                                <button type="submit" class="btn btn-info btn-sm"></button>
-                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                            </label>
-                                        </li>
-                                        <li>
-                                            <label class="form-check-label">
-                                                <button type="submit" class="btn btn-info btn-sm"></button>
-                                                Phasellus quis eros metus. Nam
-                                            </label>
-                                        </li>
-                                        <li>
-                                            <label class="form-check-label">
-                                                <button type="submit" class="btn btn-info btn-sm"></button>
-                                                it amet, consectetur adipiscing elit. Vestibulum at
-                                            </label>
-                                        </li>
+                                        @if(count($todos)==0)
+                                           <h1>No tienes pendientes hoy! 🎉</h1>
+                                            <iframe width="100%" height=415" src="https://www.youtube.com/embed/96Y1E-zdQs0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                        @endif
+                                        @foreach($todos as $todo )
+                                            <li>
+                                                <label class="form-check-label">
+                                                    <button type="submit" class="btn btn-info btn-sm"></button>
+                                                    {{$todo['todo']}}
+                                                </label>
+                                            </li>
+                                        @endforeach
                                     </ul>
                                 </div>
                             </div>
