@@ -23,14 +23,21 @@
                                 <div class="list-wrapper">
                                     <ul class="d-flex flex-column-reverse todo-list">
                                         @if(count($todos)==0)
-                                           <h1>No tienes pendientes hoy! 🎉</h1>
-                                            <iframe width="100%" height=415" src="https://www.youtube.com/embed/96Y1E-zdQs0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                            <h1>No tienes pendientes hoy! 🎉</h1>
+                                            <iframe width="100%" height=415"
+                                                    src="https://www.youtube.com/embed/96Y1E-zdQs0" frameborder="0"
+                                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                                    allowfullscreen></iframe>
                                         @endif
                                         @foreach($todos as $todo )
                                             <li>
                                                 <label class="form-check-label">
-                                                    <button type="submit" class="btn btn-info btn-sm"></button>
-                                                    {{$todo->todo}}
+                                                    <form action="{{route('quieroBorrarTarea')}}" method="post">
+                                                        <input type="hidden" value="{{$todo->id}}" name="todoId">
+                                                        @csrf
+                                                        <input type="submit" class="btn btn-info btn-sm" value="Off"/>
+                                                        {{$todo->todo}}
+                                                    </form>
                                                 </label>
                                             </li>
                                         @endforeach

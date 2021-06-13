@@ -73,5 +73,12 @@ class HomeController extends Controller
         return redirect()->back();
     }
 
+    public function borrarTarea(Request $request)
+    {
+        $todoId = $request->input('todoId');
+        Log::info('Borrando Todo numero [' . $todoId . ']');
+        Todos::where('id', $todoId)->delete();
+        return redirect()->back();
+    }
 
 }
