@@ -17,6 +17,7 @@ class CreateTodosTable extends Migration
             $table->id();
             $table->string('todo');
             $table->string('estatus');
+            $table->integer('user_id');
             $table->timestamps();
         });
     }

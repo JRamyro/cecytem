@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Todos;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 
 class HomeController extends Controller
@@ -21,6 +23,11 @@ class HomeController extends Controller
         $this->middleware('auth');
     }
 
+    public function welcome()
+    {
+        return view('welcome');
+    }
+
     /**
      * Show the application dashboard.
      *
@@ -28,7 +35,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $todos = Todos::all();
+        $todos = DB::table('todos')
+            ->where('estatus', $this->pendienteState)
+            ->where('user_id', Auth::id())
+            ->get();
         Log::info('total de todos para mostrar [' . count($todos) . ']');
         return view('home-content')->with('todos', $todos);
     }
@@ -58,6 +68,7 @@ class HomeController extends Controller
         $todoObject = new Todos();
         $todoObject->todo = $todo;
         $todoObject->estatus = $this->pendienteState;
+        $todoObject->user_id = Auth::id();
         $todoObject->save();
         return redirect()->back();
     }

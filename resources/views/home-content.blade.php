@@ -30,7 +30,7 @@
                                             <li>
                                                 <label class="form-check-label">
                                                     <button type="submit" class="btn btn-info btn-sm"></button>
-                                                    {{$todo['todo']}}
+                                                    {{$todo->todo}}
                                                 </label>
                                             </li>
                                         @endforeach

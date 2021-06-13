@@ -8,6 +8,7 @@ class Todos extends Model
 {
     protected $fillable = [
         'todo',
-        'estatus'
+        'estatus',
+        'user_id'
     ];
 }
